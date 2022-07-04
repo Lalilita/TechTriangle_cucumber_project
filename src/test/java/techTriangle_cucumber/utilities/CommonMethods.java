@@ -321,4 +321,18 @@ public class CommonMethods extends PageInitializer {
 		int randomNum = rd.nextInt(1000);
 		return sb.toString() + randomNum + "@mail.com";
 	}
+	
+	/*
+	 * Method to navigate to a page
+	 * 
+	 * by: Lalita 07/03/2022
+	 * 
+	 */
+	public static void goToPage(WebElement pageTab) {
+		pageTab.click();
+	}
+	
+	
+	
+	
 }
