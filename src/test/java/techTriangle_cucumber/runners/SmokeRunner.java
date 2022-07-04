@@ -12,8 +12,8 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src/test/resources/featureFiles", 
 		glue = "stepDefinitions",
 		dryRun = false,    
-		monochrome = true
-//		tags = "@TagThis"  
+		monochrome = true,
+		tags = "@tolatestcases"  
 		)
 
 
