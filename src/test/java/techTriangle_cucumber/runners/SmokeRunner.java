@@ -9,11 +9,11 @@ import io.cucumber.junit.CucumberOptions;
 		plugin = {"pretty",
 				"junit:target/cucumber-xmlReport/Cucumber.xml",
 				"html:target/smokeTests-cucumber-reports.html" }, 
-		features = "src/test/resources/featureFiles", 
-		glue = "stepDefinitions",
-		dryRun = false,    
+		features = "src/test/resources/featureFiles/kayakStays_Search.feature", 
+		glue = "techTriangle_cucumber/stepDefinitions",
+		dryRun = true,    
 		monochrome = true,
-		tags = "@tolatestcases"  
+		tags = "@tag1"  
 		)
 
 

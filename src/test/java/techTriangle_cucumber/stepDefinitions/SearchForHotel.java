@@ -11,7 +11,6 @@ import techTriangle_cucumber.utilities.CommonMethods;
 
 public class SearchForHotel extends CommonMethods{
 
-
 @Given("user on Kayak homepage")
 public void user_on_kayak_homepage() {
 	BaseClass.getDriver();
@@ -38,7 +37,6 @@ public void user_fill_in_searching_criteria() {
 public void user_click_on_search_button() {
 	
 	staysPage.search();
-   
 }
 
 @Then("user should be able to see the search result is displayed")
@@ -49,12 +47,10 @@ public void user_should_be_able_to_see_the_search_result_is_displayed() {
 public void user_click_on_hotel_class_and_review_score() {
 	 staysPage.furtherSearchresult();
 }
-   
 
 @Then("user should be able to see new search results are displayed")
 public void user_should_be_able_to_see_new_search_results_are_displayed() {
     staysPage.verifyImageAndHotelListIsDisplayed();
 }
-
 	
 }

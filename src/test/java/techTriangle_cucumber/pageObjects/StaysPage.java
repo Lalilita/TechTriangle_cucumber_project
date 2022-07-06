@@ -13,21 +13,13 @@ import techTriangle_cucumber.utilities.Constants;
 
 public class StaysPage extends CommonMethods{
 
-	
 	public StaysPage() {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
 
-	
-	
 	@FindBy (xpath = "//a[@aria-label='Search for hotels']")
 	WebElement staysButton;
-	
-	public void clickStays() {
-		click(staysButton);	
-	}
-	
-	
+
 	@FindBy (xpath = "//input[@placeholder='Enter a city, hotel, airport, address or landmark']")
 	WebElement cityOfStay;
 	
@@ -42,6 +34,7 @@ public class StaysPage extends CommonMethods{
 	
 	@FindBy (xpath = "//span[@aria-label='End date calendar input']//span[@class='svg']//*[name()='svg']")
 	WebElement endDate;
+	
 	@FindBy (xpath = "//div[@aria-label='September 9, 2022']")
 	WebElement checkOutDate;
 	
@@ -60,6 +53,34 @@ public class StaysPage extends CommonMethods{
 	@FindBy (xpath = "//button[@aria-label='Search']//div[@class='Iqt3-button-content']//*[name()='svg']")
 	WebElement searchButton;
 	
+	@FindBy (className = "wHSr-monthName")
+	public WebElement monthName;
+	
+	@FindBy (xpath = "/html/body/div[13]/div/div[2]/div/div[1]/div[2]/div[1]/div[2]/div")
+	public List <WebElement> allDates;
+	
+	@FindBy (xpath = "//div[@aria-label='Click to reset filters']")
+	public WebElement searchResult;
+	
+	@FindBy (xpath = "//div[@class='fArK']//div//div[@aria-label='5']//div[@class='HNDy-label']")
+	public WebElement hotelClass_FiveStars;
+	
+	@FindBy (xpath = "//div[@class='fArK']//div//div[@aria-label='8+']//div[@class='HNDy-label']")
+	public WebElement reviewScore_EightPlus;
+	
+	@FindBy (xpath = "/html/body/div[1]/div[1]/main/div[2]/div[2]/div[5]/div/div[2]/div[3]/div[3]/div[2]/div[2]/div/div")
+	public List<WebElement> hotelFeatureList;
+	
+	@FindBy (xpath = "//*[@id=\"wF0Y\"]/div/div/div/div/div[3]/div[1]/div[1]/button/img")
+	public List<WebElement> hotelImage;
+	
+	@FindBy (xpath = "//*[@id=\"wF0Y\"]/div/div/div/div/div[3]/div[2]/div[1]/div[1]/div[2]/a")
+	public List<WebElement> hotelName;
+	
+	public void clickStays() {
+		click(staysButton);	
+	}
+	
 	public void searchField() {
 		CommonMethods.wait(Constants.standardwait_time);
 		CommonMethods.click(cityOfStay);
@@ -75,22 +96,12 @@ public class StaysPage extends CommonMethods{
 		CommonMethods.wait(Constants.standardwait_time);
 		CommonMethods.click(addAdults);
 		CommonMethods.wait(Constants.standardwait_time);
-		CommonMethods.click(addAdults);
-		
+		CommonMethods.click(addAdults);	
 	}
 	
 	public void search() {
-		
 		CommonMethods.click(searchButton);
 	}
-	
-	
-	@FindBy (className = "wHSr-monthName")
-	public WebElement monthName;
-	
-	@FindBy (xpath = "/html/body/div[13]/div/div[2]/div/div[1]/div[2]/div[1]/div[2]/div")
-	public List <WebElement> allDates;
-	
 	
 	public void checkInDate(String month, String checkIn_date) {
 		CommonMethods.waitForClickability(startDate);
@@ -104,14 +115,13 @@ public class StaysPage extends CommonMethods{
 			}
 		}
 		CommonMethods.wait(Constants.standardwait_time);
-		CommonMethods.selectCalendarDate(allDates, checkIn_date);
-			
+		CommonMethods.selectCalendarDate(allDates, checkIn_date);	
 		}
 		
-		public void checkOutDate(String month, String checkOut_date) {
-			CommonMethods.waitForClickability(endDate);
-			CommonMethods.click(endDate);
-			while(true) {
+	public void checkOutDate(String month, String checkOut_date) {
+		CommonMethods.waitForClickability(endDate);
+		CommonMethods.click(endDate);
+		while(true) {
 				String text = monthName.getText();
 				if(text.equals(month)) {
 					break;
@@ -119,14 +129,9 @@ public class StaysPage extends CommonMethods{
 					CommonMethods.click(nextMonthArrow);
 				}
 			}
-			CommonMethods.wait(Constants.standardwait_time);
-			CommonMethods.selectCalendarDate(allDates, checkOut_date);
+		CommonMethods.wait(Constants.standardwait_time);
+		CommonMethods.selectCalendarDate(allDates, checkOut_date);
 			}
-	
-		
-		@FindBy (xpath = "//div[@aria-label='Click to reset filters']")
-		public WebElement searchResult;
-		
 		
 		public void verifySearchresultDisplay() {
 			String text = searchResult.getText();
@@ -134,56 +139,38 @@ public class StaysPage extends CommonMethods{
 			Assert.assertTrue(searchResult.isDisplayed());
 		}
 		
-		@FindBy (xpath = "//div[@class='fArK']//div//div[@aria-label='5']//div[@class='HNDy-label']")
-		public WebElement hotelClass_FiveStars;
-		
-		@FindBy (xpath = "//div[@class='fArK']//div//div[@aria-label='8+']//div[@class='HNDy-label']")
-		public WebElement reviewScore_EightPlus;
-		
-		
 		public void furtherSearchresult() {
 			String text = searchResult.getText();
-		
 			CommonMethods.wait(10);
 			CommonMethods.click(hotelClass_FiveStars);
 			CommonMethods.wait(Constants.standardwait_time);
 			CommonMethods.wait(Constants.standardwait_time);
 			CommonMethods.click(reviewScore_EightPlus);
-			
+			CommonMethods.wait(Constants.standardwait_time);
 			String newText = searchResult.getText();
 			System.out.println(newText);
-			
 			Assert.assertTrue(searchResult.isDisplayed());
 			Assert.assertFalse(newText.equals(text));
 		}
-		
-		@FindBy (xpath = "/html/body/div[1]/div[1]/main/div[2]/div[2]/div[5]/div/div[2]/div[3]/div[3]/div[2]/div[2]/div/div")
-		public List<WebElement> hotelFeatureList;
-		
-		@FindBy (xpath = "//*[@id=\"wF0Y\"]/div/div/div/div/div[3]/div[1]/div[1]/button/img")
-		public List<WebElement> hotelImage;
-		
-		@FindBy (xpath = "//*[@id=\"wF0Y\"]/div/div/div/div/div[3]/div[2]/div[1]/div[1]/div[2]/a")
-		public List<WebElement> hotelName;
 		
 		public void verifyImageAndHotelListIsDisplayed() {
 			for(WebElement listFearture:hotelFeatureList) {
 				Assert.assertTrue(listFearture.isDisplayed());
 			}
-			
 			for(WebElement listImage:hotelImage) {
 				Assert.assertTrue(listImage.isDisplayed());
 				Assert.assertTrue(listImage.isEnabled());
 			}
-			
 			for(WebElement listName:hotelName) {
 				String name = listName.getText();
 				System.out.println(name);
 				Assert.assertTrue(listName.isDisplayed());
 				Assert.assertTrue(listName.isEnabled());
 			}
-			
 		}
+		
+		//count booking providers
+//		/html/body/div[1]/div[1]/main/div[2]/div[2]/div[5]/div/div[1]/div/div/div[1]/div/div/div/div/div/div[17]/div[2]/div[1]/div 
 	
 	
 		
