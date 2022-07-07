@@ -1,6 +1,9 @@
 package techTriangle_cucumber.pageObjects;
 
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -33,13 +36,23 @@ public class HomePage extends CommonMethods{
 	@FindBy(xpath = "//span[@aria-label='Start date calendar input']")
 	public WebElement startDateField;
 	
+	@FindBy(xpath = "//*[@class='onx_-days']/div")
+	public List <WebElement> dateList;
+	
 	@FindBy(xpath = "//span[@aria-label='End date calendar input']")
 	public WebElement endDateField;
 	
 	@FindBy(xpath = "//button[@aria-label='Search']")
 	public WebElement searchBtn;
 	
+	@FindBy(xpath = "//*[@class='wHSr-monthName']")
+	public WebElement webMonthYear;
 	
+	@FindBy(xpath = "//button[@aria-label='Next Month']")
+	public WebElement nextMonthArrow;
+	
+	@FindBy(xpath = "//*[@class='onx_-days']/div")
+	public List <WebElement> webDayList;
 	
 
 }	
