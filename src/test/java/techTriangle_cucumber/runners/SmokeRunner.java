@@ -9,13 +9,12 @@ import io.cucumber.junit.CucumberOptions;
 		plugin = {"pretty",
 				"junit:target/cucumber-xmlReport/Cucumber.xml",
 				"html:target/smokeTests-cucumber-reports.html" }, 
-		features = "src/test/resources/featureFiles/kayakStays_Search.feature", 
+		features = "src/test/resources/featureFiles", 
 		glue = "techTriangle_cucumber/stepDefinitions",
-		dryRun = true,    
+		dryRun = false,    
 		monochrome = true,
-		tags = "@tag1"  
+		tags = "@tola2"  
 		)
-
 
 public class SmokeRunner {
 
