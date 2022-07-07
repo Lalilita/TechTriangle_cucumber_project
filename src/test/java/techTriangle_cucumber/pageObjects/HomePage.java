@@ -3,7 +3,6 @@ package techTriangle_cucumber.pageObjects;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -20,6 +19,9 @@ public class HomePage extends CommonMethods{
 	
 	@FindBy(xpath = "//a[@aria-label='Search for packages']")
 	public WebElement packagesTab;
+	
+	@FindBy(xpath = "//a[@aria-label='Search for trains']")
+	public WebElement trainsAndBusTab;
 	
 	@FindBy(xpath = "//span[@class='svg S9tW-chevron-icon-wrapper']")
 	public WebElement travellersDropDown;
@@ -45,14 +47,11 @@ public class HomePage extends CommonMethods{
 	@FindBy(xpath = "//button[@aria-label='Search']")
 	public WebElement searchBtn;
 	
-	@FindBy(xpath = "//*[@class='wHSr-monthName']")
-	public WebElement webMonthYear;
+	@FindBy(xpath = "//div[@class='wHSr-monthName']")
+	public WebElement navBar;
 	
 	@FindBy(xpath = "//button[@aria-label='Next Month']")
-	public WebElement nextMonthArrow;
-	
-	@FindBy(xpath = "//*[@class='onx_-days']/div")
-	public List <WebElement> webDayList;
+	public WebElement nextBtn;
 	
 
 }	

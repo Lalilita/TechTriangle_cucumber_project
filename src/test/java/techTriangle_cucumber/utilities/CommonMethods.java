@@ -12,6 +12,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.OutputType;
@@ -63,7 +64,7 @@ public class CommonMethods extends PageInitializer {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void selectDropDownIndex(WebElement element, int indexValue) {
 
 		try {
@@ -272,8 +273,7 @@ public class CommonMethods extends PageInitializer {
 			}
 		}
 	}
-	
-	
+
 	public static void hover(WebElement element) {
 		Actions actions = new Actions(BaseClass.getDriver());
 		actions.moveToElement(element).perform();
@@ -323,7 +323,7 @@ public class CommonMethods extends PageInitializer {
 		int randomNum = rd.nextInt(1000);
 		return sb.toString() + randomNum + "@mail.com";
 	}
-	
+
 	/*
 	 * Method to navigate to a page
 	 * 
@@ -333,81 +333,54 @@ public class CommonMethods extends PageInitializer {
 	public static void goToPage(WebElement pageTab) {
 		pageTab.click();
 	}
-	
+
 	/*
-	 * Method to select start date
+	 * Method to select date on calendar
 	 * 
 	 * by: Lalita 07/06/2022
 	 * 
 	 */
-	public void checkInDate(WebElement startDate, WebElement webMonthYear, List<WebElement> webDayList, WebElement nextMonthArrow, String month, String year, String day) {
-		startDate.click();
-		String monthAndYear = month+" "+year;
-		
-        while(true) {
-            String text = webMonthYear.getText();
-            if(text.equals(monthAndYear)) {
-                break;
-            }else {
-                nextMonthArrow.click();
-            }
-        }
- 
-        for (WebElement pickDate : webDayList) {
-            if (pickDate.isEnabled()) {
-                if (pickDate.getText().equals(day)) {
-                    pickDate.click();
-                    break;
-                }
-            }
-            
-        }
-        
-    }
-	
-	/*
-	 * Method to select end date
-	 * 
-	 * by: Lalita 07/06/2022
-	 * 
-	 */
-	public void checkOutDate(WebElement endDate, WebElement webMonthYear, List<WebElement> webDayList, WebElement nextMonthArrow, String month, String year, String day) {
-		endDate.click();
-		
-		String monthAndYear = month+" "+year;
-		
-        while(true) {
-            String text = webMonthYear.getText();
-            if(text.equals(monthAndYear)) {
-                break;
-            }else {
-                nextMonthArrow.click();
-            }
-        }
- 
-        for (WebElement pickDate : webDayList) {
-            if (pickDate.isEnabled()) {
-                if (pickDate.getText().equals(day)) {
-                    pickDate.click();
-                    break;
-                }
-            }
-            
-        }
-        
-    }
-	
+	public boolean clickDate(String selectDate, WebElement navBar, WebElement nextBtn) {
+
+		String selectDay = selectDate.split(" ")[1];
+		String selectMonth = selectDate.split(" ")[0];
+		String selectYear = selectDate.split(" ")[2];
+		String formatDate = selectMonth + " " + selectDay + ", " + selectYear;
+
+		String navBarDate = navBar.getText();
+		String webYear = navBarDate.split(" ")[1];
+		String webMonth = navBarDate.split(" ")[0];
+
+		while (!webYear.equals(selectYear) || !webMonth.equals(selectMonth)) {
+
+			nextBtn.click();
+			navBarDate = navBar.getText();
+			webYear = navBarDate.split(" ")[1];
+			webMonth = navBarDate.split(" ")[0];
+
+		}
+
+		WebElement webDate = driver.findElement(By.xpath("//*[contains(@aria-label,'" + formatDate + "')]"));
+		webDate.click();
+
+		return true;
+
+	}
+
 	/*
 	 * Method to select price range
 	 * 
 	 * by: Lalita 07/06/2022
 	 * 
 	 */
-	public void dragAndDropBy(WebElement source, int locationNeed, int target) {
-		Actions actions = new Actions(driver);
-		actions.dragAndDropBy(source, locationNeed, target).perform();
+	public void limitPriceRange(WebElement leftSlider, int pricePoint) {
+
+		for (int i = 1; i <= pricePoint; i++) {
+			leftSlider.sendKeys(Keys.ARROW_RIGHT);
+		}
+
 	}
-	
+
 	/*
 	 * Method cut dollar sign and cast to integer
 	 * 
@@ -419,6 +392,22 @@ public class CommonMethods extends PageInitializer {
 		text = text.substring(1);
 		text = text.replace(",", "");
 		int price = Integer.parseInt(text);
-		return price; 
+		return price;
+	}
+
+	/*
+	 * Method add increment in dropdown list
+	 * 
+	 * by: Lalita 07/07/2022
+	 * 
+	 */
+	public void addIncrementDropdown(WebElement dropdown, WebElement increment, int amount) throws InterruptedException {
+		dropdown.click();
+		Thread.sleep(1000);
+		int i = 1;
+		while (i < amount) {
+			increment.click();
+			i++;
+		}
 	}
 }
