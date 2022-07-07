@@ -10,6 +10,7 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
@@ -271,7 +272,8 @@ public class CommonMethods extends PageInitializer {
 			}
 		}
 	}
-
+	
+	
 	public static void hover(WebElement element) {
 		Actions actions = new Actions(BaseClass.getDriver());
 		actions.moveToElement(element).perform();
@@ -320,5 +322,103 @@ public class CommonMethods extends PageInitializer {
 		}
 		int randomNum = rd.nextInt(1000);
 		return sb.toString() + randomNum + "@mail.com";
+	}
+	
+	/*
+	 * Method to navigate to a page
+	 * 
+	 * by: Lalita 07/03/2022
+	 * 
+	 */
+	public static void goToPage(WebElement pageTab) {
+		pageTab.click();
+	}
+	
+	/*
+	 * Method to select start date
+	 * 
+	 * by: Lalita 07/06/2022
+	 * 
+	 */
+	public void checkInDate(WebElement startDate, WebElement webMonthYear, List<WebElement> webDayList, WebElement nextMonthArrow, String month, String year, String day) {
+		startDate.click();
+		String monthAndYear = month+" "+year;
+		
+        while(true) {
+            String text = webMonthYear.getText();
+            if(text.equals(monthAndYear)) {
+                break;
+            }else {
+                nextMonthArrow.click();
+            }
+        }
+ 
+        for (WebElement pickDate : webDayList) {
+            if (pickDate.isEnabled()) {
+                if (pickDate.getText().equals(day)) {
+                    pickDate.click();
+                    break;
+                }
+            }
+            
+        }
+        
+    }
+	
+	/*
+	 * Method to select end date
+	 * 
+	 * by: Lalita 07/06/2022
+	 * 
+	 */
+	public void checkOutDate(WebElement endDate, WebElement webMonthYear, List<WebElement> webDayList, WebElement nextMonthArrow, String month, String year, String day) {
+		endDate.click();
+		
+		String monthAndYear = month+" "+year;
+		
+        while(true) {
+            String text = webMonthYear.getText();
+            if(text.equals(monthAndYear)) {
+                break;
+            }else {
+                nextMonthArrow.click();
+            }
+        }
+ 
+        for (WebElement pickDate : webDayList) {
+            if (pickDate.isEnabled()) {
+                if (pickDate.getText().equals(day)) {
+                    pickDate.click();
+                    break;
+                }
+            }
+            
+        }
+        
+    }
+	
+	/*
+	 * Method to select price range
+	 * 
+	 * by: Lalita 07/06/2022
+	 * 
+	 */
+	public void dragAndDropBy(WebElement source, int locationNeed, int target) {
+		Actions actions = new Actions(driver);
+		actions.dragAndDropBy(source, locationNeed, target).perform();
+	}
+	
+	/*
+	 * Method cut dollar sign and cast to integer
+	 * 
+	 * by: Lalita 07/06/2022
+	 * 
+	 */
+	public int getPrice(WebElement element) {
+		String text = element.getText();
+		text = text.substring(1);
+		text = text.replace(",", "");
+		int price = Integer.parseInt(text);
+		return price; 
 	}
 }
