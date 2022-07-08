@@ -1,4 +1,4 @@
-package pageObjects;
+package techTriangle_cucumber.pageObjects;
 
 
 import java.util.List;
@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utilities.BaseClass;
-import utilities.CommonMethods;
+import techTriangle_cucumber.utilities.BaseClass;
+import techTriangle_cucumber.utilities.CommonMethods;
 
 public class HomePage extends CommonMethods{
 

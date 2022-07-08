@@ -1,4 +1,4 @@
-package stepDefinitions;
+package techTriangle_cucumber.stepDefinitions;
 
 
 import org.openqa.selenium.Keys;
@@ -7,7 +7,7 @@ import org.testng.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import utilities.CommonMethods;
+import techTriangle_cucumber.utilities.CommonMethods;
 
 public class PackagesTest extends CommonMethods {
 

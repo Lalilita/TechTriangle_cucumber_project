@@ -1,8 +1,8 @@
-package utilities;
+package techTriangle_cucumber.utilities;
 
-import pageObjects.HomePage;
-import pageObjects.PackagesPage;
-import pageObjects.TrainsPage;
+import techTriangle_cucumber.pageObjects.HomePage;
+import techTriangle_cucumber.pageObjects.PackagesPage;
+import techTriangle_cucumber.pageObjects.TrainsPage;
 
 public class PageInitializer extends BaseClass {
 
