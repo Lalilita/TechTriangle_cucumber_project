@@ -1,4 +1,4 @@
-package techTriangle_cucumber.pageObjects;
+package pageObjects;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import techTriangle_cucumber.utilities.BaseClass;
-import techTriangle_cucumber.utilities.CommonMethods;
+import utilities.BaseClass;
+import utilities.CommonMethods;
 
 public class TrainsPage extends CommonMethods{
 

@@ -1,4 +1,4 @@
-package techTriangle_cucumber.utilities;
+package utilities;
 
 public class Constants {
 	

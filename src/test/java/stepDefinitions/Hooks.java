@@ -1,11 +1,11 @@
-package techTriangle_cucumber.stepDefinitions;
+package stepDefinitions;
 
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import techTriangle_cucumber.utilities.BaseClass;
-import techTriangle_cucumber.utilities.CommonMethods;
+import utilities.BaseClass;
+import utilities.CommonMethods;
 
 public class Hooks {
 	

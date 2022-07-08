@@ -1,4 +1,4 @@
-package techTriangle_cucumber.utilities;
+package utilities;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

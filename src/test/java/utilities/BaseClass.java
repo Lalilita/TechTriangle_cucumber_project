@@ -1,4 +1,4 @@
-package techTriangle_cucumber.utilities;
+package utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;

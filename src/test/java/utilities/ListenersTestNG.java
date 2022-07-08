@@ -1,4 +1,4 @@
-package techTriangle_cucumber.utilities;
+package utilities;
 
 import java.util.List;
 import java.util.Map;
