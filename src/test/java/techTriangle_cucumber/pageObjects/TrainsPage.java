@@ -39,6 +39,8 @@ public class TrainsPage extends CommonMethods{
 	
 	@FindBy(xpath = "//*[@id='AsG0-booking']")
 	public WebElement bookBtn;
+	
+	//////
 
 }	
 	
