@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import techTriangle_cucumber.utilities.BaseClass;
 import techTriangle_cucumber.utilities.CommonMethods;
 
-public class SearchForHotel extends CommonMethods{
+public class SearchForHotelTest extends CommonMethods{
 
 @Given("user on Kayak homepage")
 public void user_on_kayak_homepage() {
@@ -30,12 +30,10 @@ public void user_on_the_stays_page() {
 public void user_fill_in_searching_criteria() {
 	
 	staysPage.searchField();
-   
 }
 
 @When("user click on search button")
 public void user_click_on_search_button() {
-	
 	staysPage.search();
 }
 
@@ -52,5 +50,13 @@ public void user_click_on_hotel_class_and_review_score() {
 public void user_should_be_able_to_see_new_search_results_are_displayed() {
     staysPage.verifyImageAndHotelListIsDisplayed();
 }
+
+@Then("user finish searching")
+public void user_finish_searching() {
+    BaseClass.tearDown();
+}
+
+
+
 	
 }

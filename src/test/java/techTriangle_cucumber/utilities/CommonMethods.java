@@ -4,6 +4,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -176,9 +177,8 @@ public class CommonMethods extends PageInitializer {
 	public static void switchToChildWindow() {
 		String mainWindow = BaseClass.getDriver().getWindowHandle();
 		Set<String> windows = BaseClass.getDriver().getWindowHandles();
-
+		
 		for (String eachWindow : windows) {
-
 			if (!eachWindow.equals(mainWindow)) {
 				BaseClass.getDriver().switchTo().window(eachWindow);
 				break;
@@ -321,4 +321,22 @@ public class CommonMethods extends PageInitializer {
 		int randomNum = rd.nextInt(1000);
 		return sb.toString() + randomNum + "@mail.com";
 	}
+	
+	/*
+	 * Method handle windows multiple windows using iterator
+	 * 
+	 * by: Tola 07/07/2022
+	 * 
+	 */
+	
+		public static void switchToMultipleWindow() {
+			
+			Set<String> windowHandles = BaseClass.getDriver().getWindowHandles();
+			System.out.println(windowHandles);
+			Iterator<String> iterator = windowHandles.iterator();
+			String parentWindow = iterator.next();
+			String firstChildWindow = iterator.next();
+			String secondChildWindow = iterator.next();
+			BaseClass.getDriver().switchTo().window(secondChildWindow);			
+		}
 }
