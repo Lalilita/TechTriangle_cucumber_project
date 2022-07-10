@@ -442,4 +442,17 @@ public class CommonMethods extends PageInitializer {
 		 			}
 		 		}
 	}
+	
+	/**
+	 * 
+	 * Add action click
+	 * by ratthanon Jul 08,2022
+	 * 
+	 */
+	
+	public static void Click(WebElement source) {
+		Actions actions = new Actions(BaseClass.getDriver());
+		actions.moveToElement(source).click().build().perform();
+		
+	}
 }

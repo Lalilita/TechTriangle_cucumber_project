@@ -50,6 +50,32 @@ public class HomePage extends CommonMethods {
 
 	@FindBy(xpath = "//button[@aria-label='Next Month']")
 	public WebElement nextBtn;
+	
+	// ratthanon
+	@FindBy(xpath = "//div[text()='Things to do']")
+	public WebElement thinkTodoTab;
+
+	@FindBy(xpath = "//div[@class='sign-in-nav-link']")
+	public WebElement SignInLink;
+
+	@FindBy(xpath = "//div[@class='common-authentication-react-AuthenticationDialog authentication--dialog unified-login unified-login']")
+	public WebElement signInMethod;
+
+	@FindBy(xpath = " (//div[@class='social-button-content'])[1]")
+	public WebElement BookingButton;
+
+	@FindBy(xpath = "//input[@id='username']")
+	public WebElement InputUsername;
+
+	@FindBy(xpath = "//button[@type='submit']")
+	public WebElement buttonSubMit;
+
+	@FindBy(xpath = "//input[@id='password']")
+	public WebElement InputPassword;
+
+	@FindBy(xpath = "//div[text()='Travel Restrictions']")
+	public WebElement TravelRestrictionLink;
+
 
 	
 }
