@@ -1,5 +1,6 @@
 package techTriangle_cucumber.utilities;
 
+import techTriangle_cucumber.pageObjects.FlightPage;
 import techTriangle_cucumber.pageObjects.HomePage;
 import techTriangle_cucumber.pageObjects.PackagesPage;
 import techTriangle_cucumber.pageObjects.TrainsPage;
@@ -9,6 +10,7 @@ public class PageInitializer extends BaseClass {
 	public static HomePage homePage;
 	public static PackagesPage packagesPage;
 	public static TrainsPage trainsPage;
+	public static FlightPage flightPage;
 	
 	
 	
@@ -16,6 +18,7 @@ public class PageInitializer extends BaseClass {
 		homePage = new HomePage();
 		packagesPage = new PackagesPage();
 		trainsPage = new TrainsPage();
+		flightPage = new FlightPage();
 	}
 	
 }

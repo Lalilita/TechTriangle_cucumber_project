@@ -7,11 +7,11 @@ import io.cucumber.java.Scenario;
 import techTriangle_cucumber.utilities.BaseClass;
 import techTriangle_cucumber.utilities.CommonMethods;
 
-public class Hooks {
+public class Hooks extends BaseClass{
 	
 	@Before			
 	public void setup() {
-		BaseClass.getDriver();
+		getDriver();
 	}
 	
 	
