@@ -15,21 +15,38 @@ public class TrainsPage extends CommonMethods{
 	public TrainsPage() {
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
+
+
 	
-	@FindBy(xpath = "//*[@id='XiD9-switch-list']")
-	public WebElement roundTripDropdown;
+	@FindBy(xpath = "/html/body/div[1]/div[1]/main/div[1]/div/div/div[1]/div/div/section[2]/div[2]/div/div[2]/div/form/div[1]/div/div[1]/div/div[1]/div/div")
+	public WebElement departureBox;
 	
-	@FindBy(xpath = "//*[@class='keel-grid v-c-p ']")
-	public WebElement travellerDropdown;
+	@FindBy(xpath = "/html/body/div[3]/div/div[2]/div[1]/div[1]/input")
+	public WebElement departureInput;
 	
-	@FindBy(xpath = "//*[@id='rtdN']")
-	public WebElement addAdultBtn;
+	@FindBy(xpath = "/html/body/div[4]/div/div[2]/div[1]/div[1]/input") 
+	public WebElement destinationInput;
 	
-	@FindBy(xpath = "//*[@id='It1R-transportCheckboxBus']")
+	@FindBy(xpath = "/html/body/div[5]/div/div[2]/div[1]/div[1]/div/div/div[1]/div[1]")
+	public WebElement startDate;
+	
+	@FindBy(xpath = "//*[contains(@id,'-dateRangeInput-display-end']")
+	public WebElement endDate;
+	
+	@FindBy(xpath = "/html/body/div[1]/div[1]/main/div[1]/div/div/div[1]/div/div/section[2]/div[2]/div/div[2]/div/form/div[2]/div[2]/span/span/input")
 	public WebElement busChckBox;
+	
+	@FindBy(xpath = "//*[@aria-label='Next month']")
+	public WebElement nextBtn;
+	
+	@FindBy(xpath = "//*[@class='fieldBlock buttonBlock'][1]")
+	public WebElement searchBtn;
 	
 	@FindBy(xpath = "//*[@class='resultInner keel-grid']")
 	public List <WebElement> tripList;
+	
+	@FindBy(xpath = "//*[@class='page-Numbers']/span")
+	public List <WebElement> pageList;
 	
 	@FindBy(xpath = "//*[@class='keel-grid v-c-p']")
 	public List <WebElement> tripDetailList; //show odd index
@@ -40,7 +57,6 @@ public class TrainsPage extends CommonMethods{
 	@FindBy(xpath = "//*[@id='AsG0-booking']")
 	public WebElement bookBtn;
 	
-	//////
 
 }	
 	

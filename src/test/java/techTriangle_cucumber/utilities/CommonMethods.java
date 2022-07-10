@@ -217,9 +217,14 @@ public class CommonMethods extends PageInitializer {
 		getJSObject().executeScript("arguments[0].click();", element);
 	}
 
+	public static void jsSendKeys(WebElement element, String text) {
+		getJSObject().executeScript("arguments[0].setAttribute(value);", text);
+	}
+	
 	public static void scrollToElement(WebElement element) {
 		getJSObject().executeScript("arguments[0].scrollIntoView(true);", element);
 	}
+	
 
 	public static void ScrolByPixel(int pixel) {
 		// scroll down positive
@@ -345,7 +350,7 @@ public class CommonMethods extends PageInitializer {
 		String selectDay = selectDate.split(" ")[1];
 		String selectMonth = selectDate.split(" ")[0];
 		String selectYear = selectDate.split(" ")[2];
-		String formatDate = selectMonth + " " + selectDay + ", " + selectYear;
+		String formatDate = selectMonth + " " + selectDay; // + ", " + selectYear;
 
 		String navBarDate = navBar.getText();
 		String webYear = navBarDate.split(" ")[1];

@@ -2,7 +2,6 @@ package techTriangle_cucumber.stepDefinitions;
 
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,10 +10,10 @@ import techTriangle_cucumber.utilities.CommonMethods;
 
 public class PackagesTest extends CommonMethods {
 
-	@Given("User is on KAYAK Home Page")
-	public void user_is_on_kayak_home_page() {
-		getDriver();
-	}
+//	@Given("User is on KAYAK Home Page")
+//	public void user_is_on_kayak_home_page() {
+//		getDriver();
+//	}
 
 	@When("User click on the packages category tab")
 	public void user_click_on_the_packages_category_tab() {
