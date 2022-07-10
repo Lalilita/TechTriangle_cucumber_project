@@ -10,10 +10,10 @@ import techTriangle_cucumber.utilities.CommonMethods;
 
 public class TrainsTest extends CommonMethods {
 
-	@Given("User is on KAYAK Home Page")
+	/*@Given("User is on KAYAK Home Page")
 	public void user_is_on_kayak_home_page() {
 		getDriver();
-	}
+	}*/
 
 	@When("User click on theTrain and bus category tap")
 	public void user_click_on_the_train_and_bus_category_tap() {

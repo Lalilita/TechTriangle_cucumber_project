@@ -226,7 +226,6 @@ public class CommonMethods extends PageInitializer {
 		// scroll up negative
 
 		getJSObject().executeScript("window.scrollBy(0," + pixel + ")");
-
 	}
 
 	public static String getTimeStemp() {
@@ -288,6 +287,20 @@ public class CommonMethods extends PageInitializer {
 		Actions actions = new Actions(BaseClass.getDriver());
 		actions.doubleClick(source).perform();
 	}
+	/**
+	 * 
+	 * Add action click
+	 * by ratthanon Jul 08,2022
+	 * 
+	 */
+	
+	public static void Click(WebElement source) {
+		Actions actions = new Actions(BaseClass.getDriver());
+		actions.moveToElement(source).click().build().perform();
+		
+	}
+	
+	
 
 	/**
 	 * return a list of string from a list of elements ignores any element with no

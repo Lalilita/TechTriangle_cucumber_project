@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 		plugin = {"pretty",
 				"junit:target/cucumber-xmlReport/Cucumber.xml",
 				"html:target/smokeTests-cucumber-reports.html" }, 
-		features = "src/test/resources/featureFiles/trainBus.feature", 
+		features = "src/test/resources/featureFiles", 
 		glue = "techTriangle_cucumber/stepDefinitions",
 		dryRun = false,    
 		monochrome = true
