@@ -24,14 +24,20 @@ public class TrainsPage extends CommonMethods{
 	@FindBy(xpath = "/html/body/div[3]/div/div[2]/div[1]/div[1]/input")
 	public WebElement departureInput;
 	
+	@FindBy(xpath = "//div[@data-placeholder='To'])[1]")
+	public WebElement destinationBox;
+	
 	@FindBy(xpath = "/html/body/div[4]/div/div[2]/div[1]/div[1]/input") 
 	public WebElement destinationInput;
 	
-	@FindBy(xpath = "/html/body/div[5]/div/div[2]/div[1]/div[1]/div/div/div[1]/div[1]")
-	public WebElement startDate;
+	@FindBy(xpath = "//div[@data-placeholder='Depart'][1]") 
+	public WebElement BusTrainDepart;
 	
-	@FindBy(xpath = "//*[contains(@id,'-dateRangeInput-display-end']")
-	public WebElement endDate;
+	@FindBy(xpath = "//div[@class='weeks ']/div/div")
+	public List <WebElement> startDates;
+	
+	@FindBy(xpath = "//div[@class='weeks ']/div/div")
+	public List <WebElement> endDates;
 	
 	@FindBy(xpath = "/html/body/div[1]/div[1]/main/div[1]/div/div/div[1]/div/div/section[2]/div[2]/div/div[2]/div/form/div[2]/div[2]/span/span/input")
 	public WebElement busChckBox;
@@ -51,10 +57,14 @@ public class TrainsPage extends CommonMethods{
 	@FindBy(xpath = "//*[@class='keel-grid v-c-p']")
 	public List <WebElement> tripDetailList; //show odd index
 	
-	@FindBy(xpath = "//*[@class='col col-best']")
-	public WebElement DeptAndReturnBtn;
+	@FindBy(xpath = "//*[contains(@id,'-best') and @type='button'][1]") //*[@class='col col-best'][1]")
+	public WebElement deptBtn;
 	
-	@FindBy(xpath = "//*[@id='AsG0-booking']")
+//	@FindBy(xpath = "//*[contains(@class,'bookingButton sleekButton')][1]")
+	@FindBy(xpath = "/html/body/div[1]/div[1]/main/div/div[2]/div[4]/div/div[2]/div/div[4]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div")
+	public WebElement returnBtn;
+	
+	@FindBy(xpath = "//*[contains(@id,'-booking')]")
 	public WebElement bookBtn;
 	
 

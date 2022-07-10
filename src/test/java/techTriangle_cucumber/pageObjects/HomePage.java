@@ -24,11 +24,11 @@ public class HomePage extends CommonMethods {
 	@FindBy(xpath = "//a[@aria-label='Flight tracker']")
 	public WebElement flightTrackerTab;
 
-	@FindBy(xpath = "//span[@class='svg S9tW-chevron-icon-wrapper']")
-	public WebElement travellersDropDown;
-
-	@FindBy(xpath = "//*[@class='wJ5y'][1]//button[2]")
-	public WebElement addAdultBtn;
+//	@FindBy(xpath = "//span[@class='svg S9tW-chevron-icon-wrapper']")
+//	public WebElement travellersDropDown;
+//
+//	@FindBy(xpath = "//*[@class='wJ5y'][1]//button[2]")
+//	public WebElement addAdultBtn;
 
 	@FindBy(xpath = "//input[@placeholder='From']")
 	public WebElement fromField;
@@ -38,9 +38,6 @@ public class HomePage extends CommonMethods {
 
 	@FindBy(xpath = "//span[@aria-label='Start date calendar input']")
 	public WebElement startDateField;
-
-//	@FindBy(xpath = "//*[@class='onx_-days']/div")
-//	public List <WebElement> dateList;
 
 	@FindBy(xpath = "//span[@aria-label='End date calendar input']")
 	public WebElement endDateField;

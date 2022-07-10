@@ -16,17 +16,8 @@ public class PackagesPage extends CommonMethods{
 		PageFactory.initElements(BaseClass.getDriver(), this);
 	}
 	
-//	@FindBy(xpath = "//*[@class='yNPo-filtered']")
-//	public WebElement filterPackage;
-//	
-//	@FindBy(xpath = "//*[@class='yNPo-total']")
-//	public WebElement totalPackage;
-	
 	@FindBy(xpath = "//*[@class='iRhY']")
 	public List <WebElement> hotelsOnPageList;
-	
-//	@FindBy(xpath = "//span[text()='See flight details']")
-//	public List <WebElement> seeFlightDetails;
 	
 	@FindBy(xpath = "//*[text()='5']")
 	public WebElement fifthStarBtn;

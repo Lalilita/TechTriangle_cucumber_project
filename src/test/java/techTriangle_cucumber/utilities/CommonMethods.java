@@ -415,4 +415,31 @@ public class CommonMethods extends PageInitializer {
 			i++;
 		}
 	}
+	
+	/*
+	 * Method pick only date (find all matching nodes in calendar)
+	 * 
+	 * by: Ratthanon 07/09/2022
+	 * 
+	 */
+	public void pickDate(List<WebElement> startDates, String startDate, List<WebElement> endDates, String endDate) {
+		                 
+		 		for(WebElement ele:startDates) {
+		 			String date=ele.getText();
+		 			System.out.println(date);
+		 			if(date.equalsIgnoreCase(startDate)) {
+		 				ele.click();
+		 				break;
+		 			}
+		 		}
+		 		
+		 		for(WebElement ele:endDates) {
+		 			String date=ele.getText();
+		 			System.out.println(date);
+		 			if(date.equalsIgnoreCase(endDate)) {
+		 				ele.click();
+		 				break;
+		 			}
+		 		}
+	}
 }

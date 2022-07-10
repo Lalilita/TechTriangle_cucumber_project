@@ -26,7 +26,6 @@ public class FlightTrackerByAirport extends CommonMethods {
 	@When("User select Airport tab")
 	public void user_select_airport_tab() {
 		flightPage.airportTab.click();
-		System.out.println("click airport tab)");
 	}
 	@Then("User select {string} from flight tracker \\(IAD)")
 	public void user_select_from_flight_tracker_iad(String airport) {
