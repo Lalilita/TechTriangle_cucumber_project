@@ -88,8 +88,11 @@ public class StaysPage extends CommonMethods{
 	@FindBy (xpath = "(//span[@class='qSC7-show-more-label-text'])[2]")
 	public WebElement dropDownBox;
 	
-//	@FindBy (xpath = "(//div[@class='ifcf-dropdownProviderName'])[3]")
-	@FindBy (xpath = "//*[text()='KAYAK']")
+	@FindBy (xpath = "/html/body/div[14]/div/div/div[1]/a/div[2]")
+	public List<WebElement> listOfDropDown;
+	
+	@FindBy (xpath = "(//div[@class='ifcf-dropdownProviderName'])[3]")
+//	@FindBy (xpath = "//*[text()='KAYAK']")
 	public WebElement kayak;
 	
 	@FindBy (xpath = "(//h1[@class='c3xth-hotel-name'])[1]")
@@ -267,8 +270,16 @@ public class StaysPage extends CommonMethods{
 	public void kayakBookingProvider() {
 		CommonMethods.scrollToElement(dropDownBox);
 		CommonMethods.jsClick(dropDownBox);
-		CommonMethods.scrollToElement(kayak);
-		CommonMethods.jsClick(kayak);
+		CommonMethods.wait(Constants.standardwait_time);
+		for (WebElement list:listOfDropDown) {
+			String bookingName = list.getText();
+			System.out.println(bookingName);
+			if(list.getText().equals("KAYAK")) {
+				System.out.println("pass");
+				CommonMethods.click(list);
+				break;
+			}
+		}
 	}
 	
 	public void dealingWindow() {

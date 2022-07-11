@@ -1,5 +1,5 @@
 
-#@tola2
+@tola2
 Feature: Stays page view sliders automation testing
 
 Background: 
