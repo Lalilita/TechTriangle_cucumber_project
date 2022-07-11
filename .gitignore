@@ -2,6 +2,7 @@
 .classpath
 .project
 .settings/
+*.html
  
 # Mac
 .DS_Store
@@ -9,3 +10,4 @@
 # Maven
 log/
 target/
+test-output/
