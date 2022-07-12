@@ -1,5 +1,6 @@
 package techTriangle_cucumber.utilities;
 
+import techTriangle_cucumber.pageObjects.BookingCarPage;
 import techTriangle_cucumber.pageObjects.FlightPage;
 import techTriangle_cucumber.pageObjects.HomePage;
 import techTriangle_cucumber.pageObjects.PackagesPage;
@@ -17,6 +18,7 @@ public class PageInitializer extends BaseClass {
 	public static ThingToDoPage thingsToDoPage;
 	public static TravelRestrictionsPage travelRestrictpage;
 	public static StaysPage staysPage;
+	public static BookingCarPage bkCarPg;
 	
 	
 	public static void initialize() {
@@ -27,6 +29,7 @@ public class PageInitializer extends BaseClass {
 		thingsToDoPage = new ThingToDoPage() ;
 		travelRestrictpage = new TravelRestrictionsPage();
 		staysPage = new StaysPage();
+		bkCarPg = new BookingCarPage();
 	}
 	
 }

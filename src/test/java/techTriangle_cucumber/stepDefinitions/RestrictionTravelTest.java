@@ -50,9 +50,9 @@ public class RestrictionTravelTest extends CommonMethods {
 	}
 
 
-	@And("User can close the brower")
+	/*@And("User can close the brower")
 	public void user_can_close_the_brower() {
 	    tearDown();
-	}
+	}*/
 
 }

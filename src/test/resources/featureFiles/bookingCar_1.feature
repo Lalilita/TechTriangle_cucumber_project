@@ -11,3 +11,4 @@ And User scroll down to top 8 popular cities
 And   User should see the 8 slide and can click on each slide
 When User click  the cities on the  slide
 Then User able to see the list of rental car and show the pickup location is the same with the city in the slide 
+And User can close the brower

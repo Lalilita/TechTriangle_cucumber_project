@@ -6,10 +6,10 @@ import techTriangle_cucumber.utilities.CommonMethods;
 
 public class BookingCarStepdefinitions extends CommonMethods {
 
-	@Given("User is on KAYAK Home Page")
+	/*@Given("User is on KAYAK Home Page")
 	public void user_is_on_kayak_home_page() {
 		getDriver();
-	}
+	}*/
 
 	@When("User click on car tab") // call from pageInitialize
 	public void user_click_on_car_tab() {
