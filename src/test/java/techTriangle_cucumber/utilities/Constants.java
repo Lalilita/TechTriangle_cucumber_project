@@ -8,6 +8,7 @@ public class Constants {
 	
 	public static final String SCREENSHOT_FILEPATH = "test-output/screenshort";
 	
+	public static final int standardwait_time = 5;
 	
 	
 	

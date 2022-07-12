@@ -3,6 +3,7 @@ package techTriangle_cucumber.utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -47,7 +48,8 @@ public class BaseClass {
 
 	public static void tearDown() {
 		if (driver != null) {
-			driver.close();
+//			driver.close();
+			driver.quit();
 			driver = null;
 		}
 	}
