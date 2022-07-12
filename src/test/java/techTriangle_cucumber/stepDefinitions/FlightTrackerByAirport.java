@@ -10,10 +10,11 @@ import techTriangle_cucumber.utilities.CommonMethods;
 
 public class FlightTrackerByAirport extends CommonMethods {
 	
-	@Given("User is on KAYAK Home Page")
-	public void user_is_on_kayak_home_page() {
-		getDriver();
-	}
+//	@Given("User is on KAYAK Home Page")
+//	public void user_is_on_kayak_home_page() {
+//		getDriver();
+//	}
+	
 	@When("User click on the Flight Tracker tap")
 	public void user_click_on_the_flight_tracker_tap() {
 		homePage.flightTrackerTab.click();
@@ -27,17 +28,13 @@ public class FlightTrackerByAirport extends CommonMethods {
 	public void user_select_airport_tab() {
 		flightPage.airportTab.click();
 	}
-	@Then("User select {string} from flight tracker \\(IAD)")
-	public void user_select_from_flight_tracker_iad(String airport) {
-		flightPage.airportInput.sendKeys(airport);
-		flightPage.airportInput.click();
-		flightPage.airportIAD.click();
+	@Then("User enter {string} in Airline field")
+	public void user_enter_in_Airport_field(String airport) {
+		flightPage.enterAirport(airport);
 	}
-	@Then("User select {string} name \\(Korean Air)")
-	public void user_select_name_korean_air(String airline) {
-		flightPage.airportAirlineInput.sendKeys(airline);
-		flightPage.airportAirlineInput.click();
-		flightPage.airlineKE.click();
+	@Then("User enter {string} in Flight Number field")
+	public void user_enter_in_Flight_Number_field(String airline) {
+		flightPage.enterAirlineAirport(airline);
 	}
 	@Then("User click on trackFlight Button")
 	public void user_click_on_track_flight_button() {

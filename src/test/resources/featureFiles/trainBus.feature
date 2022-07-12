@@ -1,4 +1,4 @@
-@trainAndBus_SearchBox
+@lalita
 Feature: Search Box Functionality in Train and bus category tap
 
 
@@ -8,6 +8,7 @@ Scenario: User is able to search for train after input information in the search
 When User click on theTrain and bus category tap
 Then User should be navigated to the "<TrainPage>" and able to input search information in the provided fields
 And User select departure station from "<Departure>" and arrival station "<Destination>"
+And User select "<deptDate>" and "<reDate>"
 And User click on train
 And User click search button
 Then User should be able to see the number of trips as a result of the search displayed in different pages
@@ -16,8 +17,8 @@ And User can close the brower
 
 
 Examples:
-|TrainPage|Departure  						|Destination |BookingPage|
-|trains		|Union, Washington, D.C.|New Rochelle|booking    |
+|TrainPage|Departure  						|Destination |BookingPage|deptDate|reDate|
+|trains		|Union, Washington, D.C.|New Rochelle|booking    |20			|30		 |
 
 
 

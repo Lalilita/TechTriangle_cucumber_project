@@ -24,14 +24,12 @@ public class FlightTrackerByNumber extends CommonMethods {
 
 	@When("User select {string} from flight tracker")
 	public void user_select_from_flight_tracker(String airline) {
-		flightPage.airlineInput.sendKeys(airline);
-		flightPage.airlineInput.click();
-		flightPage.airlineAV.click();
+		flightPage.enterAirline(airline); 
 	}
 
 	@When("User select {string} from Flight Number")
 	public void user_select_from_flight_number(String flightnumber) {
-		flightPage.flightInput.sendKeys(flightnumber);
+		flightPage.enterFlightNumber(flightnumber);
 	}
 
 	@When("User select defualt date click on track flight button")
