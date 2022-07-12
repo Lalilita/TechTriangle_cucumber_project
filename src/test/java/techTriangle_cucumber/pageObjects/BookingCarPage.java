@@ -16,7 +16,7 @@ public class BookingCarPage extends CommonMethods {
 	}
 
 	// WebElement----- Kong
-	@FindBy(xpath = "//div[@class='hsCY-menu-item-title hsCY-active']")
+	@FindBy(xpath = "//a[@aria-label='Search for cars']")
 	public WebElement carBtn;
 
 	@FindBy(xpath = "/html/body/div[1]/div[1]/main/div[1]/div[1]/div/div[1]/div/div/section[1]/div/h2")
@@ -31,7 +31,7 @@ public class BookingCarPage extends CommonMethods {
 //	@FindBy(xpath="//*[@id='BZHB']/div/section/div/div/div/div[2]/div/a")
 //	public WebElement EightCities;
 
-	@FindBy(xpath = "/html/body/div[1]/div[1]/main/div[1]/div[1]/div/div[2]/div[1]/div[11]/div/section/div/div/div/div[2]//a")
+	@FindBy(xpath = "(//div[@class='c-5pd-list'])[8]/div/a")
 	public List<WebElement> eightCities;
 
 	@FindBy(xpath = "//h5[normalize-space()='Orlando, FL']")
