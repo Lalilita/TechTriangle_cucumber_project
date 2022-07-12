@@ -70,6 +70,9 @@ public class HomePage extends CommonMethods {
 
 	@FindBy(xpath = "//div[text()='Travel Restrictions']")
 	public WebElement TravelRestrictionLink;
+	
+	@FindBy(xpath = "//a[@aria-label='Search for cars']")
+	public WebElement carBtn;
 
 
 	
