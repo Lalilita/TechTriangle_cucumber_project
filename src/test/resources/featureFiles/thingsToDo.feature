@@ -11,3 +11,4 @@ Scenario: Search Box Functionality
 		Then User able to see Top attractions in Chicago and see all button
 		When User click on see all button
 		Then User able to see experiences attraction places of the city
+		And User can close the brower
