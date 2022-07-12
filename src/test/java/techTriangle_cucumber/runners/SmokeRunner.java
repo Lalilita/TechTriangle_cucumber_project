@@ -13,11 +13,16 @@ import io.cucumber.junit.CucumberOptions;
 		glue = "techTriangle_cucumber/stepDefinitions",
 		dryRun = false,    
 		monochrome = true
-//		tags = "@flightTracker"  
-		//tags = "@tola2"
-		)
 
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
 public class SmokeRunner {
 
 	
