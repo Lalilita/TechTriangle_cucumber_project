@@ -40,7 +40,7 @@ public class SearchFunctionTest extends CommonMethods{
 	public void user_enter_a_city_and_click_on_the_city_on_the_drop_down_and_click_search_button() throws InterruptedException {
 		
 		thingsToDoPage.ThingToDoText.click();
-		thingsToDoPage.ThingToDoInputBox.sendKeys(getProperty("city"));
+		thingsToDoPage.ThingToDoInputBox.sendKeys(getProperty("cityCenter"));
 		thingsToDoPage.ThingToDoselectCity.click();
 		thingsToDoPage.ThingToDoSearchButton.click();
 	  
@@ -48,7 +48,7 @@ public class SearchFunctionTest extends CommonMethods{
 
 	@Then("User able to see Top attractions in Chicago and see all button")
 	public void user_able_to_see_top_attractions_in_chicago_and_see_all_button() throws InterruptedException {
-		CommonMethods.waitForVisibility(thingsToDoPage.headerTopAttractionCity);
+		waitForVisibility(thingsToDoPage.headerTopAttractionCity);
 		Assert.assertTrue(thingsToDoPage.headerTopAttractionCity.getText().contains(getProperty("headerTopAttraction")) && thingsToDoPage.seeallButton.isDisplayed());
 	   
 	}
@@ -66,18 +66,34 @@ public class SearchFunctionTest extends CommonMethods{
 		int number = Integer.parseInt(getProperty("numberAttraction"));
 		
 		while(thingsToDoPage.getNumberResult() < number) {
-			CommonMethods.scrollToElement(thingsToDoPage.FooterCompany);
+			System.out.println(thingsToDoPage.getNumberResult());
+			scrollToElement(thingsToDoPage.FooterCompany);
+			Thread.sleep(3000);
 		}
-		System.out.println(thingsToDoPage.getNumberResult());
+		
 		Assert.assertTrue(thingsToDoPage.getNumberResult() == number);
 		tearDown();
+		
 	}
 	
 	@Then("User able to see Tours in Most popular experiences in that city session  and see all button")
 	public void user_able_to_see_tours_in_most_popular_experiences_in_that_city_session_and_see_all_button() {
-	    CommonMethods.ScrolByPixel(1500);
+	    ScrolByPixel(1500);
 	    Assert.assertTrue(thingsToDoPage.headerTourCity.getText().contains(getProperty("headerTourCity")) && thingsToDoPage.headerTour.getText().contains(getProperty("headerTour")));
 	    Assert.assertTrue(thingsToDoPage.seeallButtonTour.isDisplayed());
+	    
+	}
+	
+	@When("User click {string} and navigate to the correct page")
+	public void user_click_and_navigate_to_the_correct_page(String linkurl) throws InterruptedException {
+		WebElement linktext = getDriver().findElement(By.xpath("//span[text()='" + linkurl + "']"));
+		linktext.click();
+		Thread.sleep(2000);
+		
+		WebElement headerPage = getDriver().findElement(By.xpath("//h1[text()='" + linkurl + "']"));
+		Assert.assertTrue(headerPage.getText().contains(linkurl));
+		driver.navigate().back();
+		ScrolByPixel(1500);
 	    
 	}
 
@@ -97,16 +113,14 @@ public class SearchFunctionTest extends CommonMethods{
 	
 	@When("User click filter the type of tour")
 	public void user_click_filter_the_type_of_tour() throws InterruptedException {
-		CommonMethods.waitForVisibility(thingsToDoPage.filterTour);
-		CommonMethods.Click(thingsToDoPage.filterTour);
+		waitForVisibility(thingsToDoPage.filterTour);
+		Click(thingsToDoPage.filterTour);
 	}
 
 	@Then("User show see the correct number of results to dispaly on the page")
 	public void user_show_see_the_correct_number_of_results_to_dispaly_on_the_page() {
 		System.out.println(thingsToDoPage.ResultnumberCityTour.getText());
 		Assert.assertEquals(thingsToDoPage.numberCityTour.getText(), thingsToDoPage.ResultnumberCityTour.getText());
-		tearDown();
-	   
 	}
 
 
