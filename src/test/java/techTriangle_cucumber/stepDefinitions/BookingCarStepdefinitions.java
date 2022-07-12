@@ -1,6 +1,7 @@
 package techTriangle_cucumber.stepDefinitions;
 
 import io.cucumber.java.en.*;
+
 import techTriangle_cucumber.utilities.BaseClass;
 import techTriangle_cucumber.utilities.CommonMethods;
 
@@ -13,7 +14,7 @@ public class BookingCarStepdefinitions extends CommonMethods {
 
 	@When("User click on car tab") // call from pageInitialize
 	public void user_click_on_car_tab() {
-		bkCarPg.clickCarTab();
+		homePage.carBtn.click();
 	}
 
 	@When("User should be navigated to car page")
