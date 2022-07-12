@@ -12,7 +12,7 @@ And User click on train
 And User click search button
 Then User should be able to see the number of trips as a result of the search displayed in different pages
 And user should also be able select departure trip and returned trip and navigate to the "<BookingPage>"
-
+And User can close the brower
 
 
 Examples:

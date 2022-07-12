@@ -12,7 +12,7 @@ And User select "<Airport>" from flight tracker (IAD)
 And User select "<Airline>" name (Korean Air)
 And User click on trackFlight Button
 Then User should be able to track the flight based on the airport name, airline name and date they have input.
-
+And User can close the brower
 
 Examples:
 |Page		|Airport|  Airline 				|

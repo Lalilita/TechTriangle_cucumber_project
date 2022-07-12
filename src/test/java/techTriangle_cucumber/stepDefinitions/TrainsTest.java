@@ -3,7 +3,6 @@ package techTriangle_cucumber.stepDefinitions;
 import java.util.List;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,27 +33,6 @@ public class TrainsTest extends CommonMethods {
 		trainsPage.destinationInput.sendKeys(Keys.ENTER);
 	}
 
-	
-	@Then("User should be navigated to the train page and able to input search information in the provided fields")
-	public void user_should_be_navigated_to_the_train_page_and_able_to_input_search_information_in_the_provided_fields() {
-	}
-	
-	@Then("User select round trip")
-	public void user_select_round_trip() {
-	}
-	
-	@Then("User select {int} adults")
-	public void user_select_adults(Integer int1) {
-	}
-	
-	@Then("User select departure station from Union, Washington, D.C., District of Columbia, United States and arrival station New Rochelle, New Rochelle, New York, United States")
-	public void user_select_departure_station_from_union_washington_d_c_district_of_columbia_united_states_and_arrival_station_new_rochelle_new_rochelle_new_york_united_states() {
-	}
-	
-	@Then("User select departure and arrival date")
-	public void user_select_departure_and_arrival_date() {
-	}
-	
 	@Then("User click on train")
 	public void user_click_on_train() throws InterruptedException {
 		trainsPage.busChckBox.click();
@@ -87,6 +65,12 @@ public class TrainsTest extends CommonMethods {
 		Assert.assertTrue(trainsPage.bookBtn.isDisplayed());
 		System.out.println("book button is display");
 	}
+
+	@Then("User can close the brower")
+	public void user_can_close_the_brower() {
+	    tearDown();
+	}
+
 
 
 

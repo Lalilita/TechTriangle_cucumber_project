@@ -15,6 +15,7 @@ When User click on the five stars button
 And User click on eight plus review score button
 And User select price at maximum
 Then User should be able to see only one hotel with a price matching the selected price
+And User can close the brower
 
 
 Examples:
