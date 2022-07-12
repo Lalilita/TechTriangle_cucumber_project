@@ -2,6 +2,7 @@ package techTriangle_cucumber.pageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,12 +24,6 @@ public class HomePage extends CommonMethods {
 
 	@FindBy(xpath = "//a[@aria-label='Flight tracker']")
 	public WebElement flightTrackerTab;
-
-//	@FindBy(xpath = "//span[@class='svg S9tW-chevron-icon-wrapper']")
-//	public WebElement travellersDropDown;
-//
-//	@FindBy(xpath = "//*[@class='wJ5y'][1]//button[2]")
-//	public WebElement addAdultBtn;
 
 	@FindBy(xpath = "//input[@placeholder='From']")
 	public WebElement fromField;
@@ -80,5 +75,15 @@ public class HomePage extends CommonMethods {
 	public WebElement carBtn;
 
 
+	
+	//------------ Method ------------------//
+	//Lalita
+	
+	public  void setLocation(String location) throws InterruptedException {
+	sendText(toField, location);
+	Thread.sleep(1000);
+	toField.sendKeys(Keys.ARROW_DOWN);
+	toField.sendKeys(Keys.TAB);
+	}
 	
 }

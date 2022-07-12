@@ -1,3 +1,4 @@
+#@lalita
 Feature: Search Box Functionality in packages category tab
 
 
@@ -19,8 +20,8 @@ And User can close the brower
 
 
 Examples:
-|PKPage		|Departure|Destination|StartDate		|EndDate 			 |hotelAmountOnPage|
-|packages	|IAD			|New york   |August 1 2022|August 31 2022|16							 |
+|PKPage		|Departure|Destination		 |StartDate		 |EndDate 			 |hotelAmountOnPage|
+|packages	|IAD			|Paris,	France   |August 1 2022|August 31 2022 |15							 |
 
 
 

@@ -1,4 +1,4 @@
-@flightTracker
+#@lalita
 Feature: Flight Tracker Functionality 
 
 
@@ -8,8 +8,8 @@ Given User is on KAYAK Home Page
 When User click on the Flight Tracker tap
 Then User should be navigated to "<Page>"
 When User select Airport tab
-And User select "<Airport>" from flight tracker (IAD)
-And User select "<Airline>" name (Korean Air)
+And User enter "<Airport>" in Airline field
+And User enter "<Airline>" in Flight Number field
 And User click on trackFlight Button
 Then User should be able to track the flight based on the airport name, airline name and date they have input.
 And User can close the brower

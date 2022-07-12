@@ -12,7 +12,14 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src/test/resources/featureFiles", 
 		glue = "techTriangle_cucumber/stepDefinitions",
 		dryRun = false,    
+<<<<<<< HEAD
+		monochrome = true
+		
+		
+		
+=======
 		monochrome = true,
+>>>>>>> main
 
 		
 		
