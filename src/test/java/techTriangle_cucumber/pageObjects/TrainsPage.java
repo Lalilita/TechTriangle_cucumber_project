@@ -73,14 +73,14 @@ public class TrainsPage extends CommonMethods{
 	
 	
 	//---------------method-------------------//
-	public void setDepartureAndDestination(String departure , String destination) throws InterruptedException {
+	public void setDepartureAndDestination(String departure , String destination2) throws InterruptedException {
 		departureBox.click();
 		departureInput.sendKeys(departure);
 		Thread.sleep(1000);
 		departureInput.sendKeys(Keys.ARROW_DOWN);
 		departureInput.sendKeys(Keys.TAB);
 		Thread.sleep(1000);
-		destinationInput.sendKeys(destination);
+		destinationInput.sendKeys(destination2);
 		Thread.sleep(1000);
 		destinationInput.sendKeys(Keys.ENTER);
 	}	
@@ -92,7 +92,6 @@ public class TrainsPage extends CommonMethods{
         
  		for(WebElement ele:allDates){
  			String date=ele.getText();
- 			System.out.println(date);
  			if(date.equalsIgnoreCase(deptDate))	{
  				ele.click();
  				break;
@@ -103,7 +102,6 @@ public class TrainsPage extends CommonMethods{
         
  		for(WebElement ele:allDates2){
  			String date=ele.getText();
- 			System.out.println(date);
  			if(date.equalsIgnoreCase(reDate))	{
  				ele.click();
  				break;

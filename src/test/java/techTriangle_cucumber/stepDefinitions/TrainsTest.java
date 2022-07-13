@@ -13,10 +13,10 @@ import techTriangle_cucumber.utilities.CommonMethods;
 
 public class TrainsTest extends CommonMethods {
 
-	@Given("User is on KAYAK Home Page")
-	public void user_is_on_kayak_home_page() {
-		getDriver();
-	}
+//	@Given("User is on KAYAK Home Page")
+//	public void user_is_on_kayak_home_page() {
+//		getDriver();
+//	}
 	
 	@When("User click on theTrain and bus category tap")
 	public void user_click_on_the_train_and_bus_category_tap() throws InterruptedException {
@@ -54,7 +54,7 @@ public class TrainsTest extends CommonMethods {
 	@Then("User should be able to see the number of trips as a result of the search displayed in different pages")
 	public void user_should_be_able_to_see_the_number_of_trips_as_a_result_of_the_search_displayed_in_different_pages()
 			throws InterruptedException {
-		waitForVisibility(trainsPage.tripList.get(0));
+		wait(5);
 		int i = 1;
 		for (i = 1; i < trainsPage.tripList.size(); i++) {
 			Assert.assertTrue(trainsPage.tripList.get(i).isDisplayed());
@@ -67,17 +67,17 @@ public class TrainsTest extends CommonMethods {
 	public void user_should_also_be_able_select_departure_trip_and_returned_trip_and_navigate_to_the(String bookingPage)
 			throws InterruptedException {
 		trainsPage.deptBtn.click(); 	//select departure btn
-		Thread.sleep(2000);
+		wait(2);
 		trainsPage.returnBtn.click();  //select return btn
-		Thread.sleep(2000);
+		wait(2);
 		switchToChildWindow();
 		Assert.assertTrue(trainsPage.bookBtn.isDisplayed());  //go to book page
 		System.out.println("book button is display");
 	}
 
-//	@Then("User can close the brower")
-//	public void user_can_close_the_brower() {
-//	    tearDown();
-//	}
+	@Then("User can close the browser")
+	public void user_can_close_the_broswer() {
+	    tearDown();
+	}
 
 }
