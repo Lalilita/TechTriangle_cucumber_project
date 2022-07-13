@@ -12,7 +12,7 @@ When User select "<Airline>" from flight tracker
 And User select "<FlightNumber>" from Flight Number
 And User select defualt date click on track flight button
 Then User able to see the result of selected airline
-And User can close the brower
+And User can close the browser
 
 
 Examples:

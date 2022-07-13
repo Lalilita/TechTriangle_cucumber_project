@@ -190,7 +190,7 @@ public class CommonMethods extends PageInitializer {
 	}
 
 	public static WebDriverWait getWaitObject() {
-		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Constants.explicit_wait_time);
+		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Constants.standardwait_time);
 		return wait;
 	}
 
@@ -351,7 +351,7 @@ public class CommonMethods extends PageInitializer {
 		String selectDay = selectDate.split(" ")[1];
 		String selectMonth = selectDate.split(" ")[0];
 		String selectYear = selectDate.split(" ")[2];
-		String formatDate = selectMonth + " " + selectDay; // + ", " + selectYear;
+		String formatDate = selectMonth + " " + selectDay + ", " + selectYear;
 
 		String navBarDate = navBar.getText();
 		String webYear = navBarDate.split(" ")[1];
@@ -427,7 +427,6 @@ public class CommonMethods extends PageInitializer {
 		                 
 		 		for(WebElement ele:startDates) {
 		 			String date=ele.getText();
-		 			System.out.println(date);
 		 			if(date.equalsIgnoreCase(startDate)) {
 		 				ele.click();
 		 				break;
@@ -436,7 +435,6 @@ public class CommonMethods extends PageInitializer {
 		 		
 		 		for(WebElement ele:endDates) {
 		 			String date=ele.getText();
-		 			System.out.println(date);
 		 			if(date.equalsIgnoreCase(endDate)) {
 		 				ele.click();
 		 				break;

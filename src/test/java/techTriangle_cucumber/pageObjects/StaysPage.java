@@ -28,7 +28,7 @@ public class StaysPage extends CommonMethods{
 	@FindBy (xpath = "//button[@aria-label='Next Month']//span[@class='svg tUEz-icon']//*[name()='svg']")
 	public WebElement nextMonthArrow;
 
-	@FindBy (xpath = "(//div[@aria-label='September 3, 2022'])")
+	@FindBy (xpath = "(//div[@aria-label='September 3, 2022'])[2]")
 	public WebElement checkInDate;
 
 	@FindBy (xpath = "//span[@aria-label='End date calendar input']//span[@class='svg']//*[name()='svg']")
@@ -187,12 +187,14 @@ public class StaysPage extends CommonMethods{
 	public void checkInDate(String month, String checkIn_date) {
 		CommonMethods.waitForClickability(startDate);
 		CommonMethods.click(startDate);
-		while(true) {
+		int count = 0;
+		while(count < 6) {
 			String text = monthName.getText();
 			if(text.equals(month)) {
 				break;
 			}else {
 				CommonMethods.click(nextMonthArrow);
+				count++;
 			}
 		}
 		CommonMethods.wait(Constants.standardwait_time);
@@ -202,12 +204,14 @@ public class StaysPage extends CommonMethods{
 	public void checkOutDate(String month, String checkOut_date) {
 		CommonMethods.waitForClickability(endDate);
 		CommonMethods.click(endDate);
-		while(true) {
+		int count = 0;
+		while(count < 6) {
 			String text = monthName.getText();
 			if(text.equals(month)) {
 				break;
 			}else {
 				CommonMethods.click(nextMonthArrow);
+				count++;
 			}
 		}
 		CommonMethods.wait(Constants.standardwait_time);

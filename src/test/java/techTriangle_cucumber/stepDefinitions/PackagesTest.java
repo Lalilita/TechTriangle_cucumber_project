@@ -2,6 +2,7 @@ package techTriangle_cucumber.stepDefinitions;
 
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,6 +11,10 @@ import techTriangle_cucumber.utilities.CommonMethods;
 
 public class PackagesTest extends CommonMethods {
 
+	@Given("User is on KAYAK Home Page")
+	public void user_is_on_kayak_home_page() {
+		getDriver();
+	}
 
 	@When("User click on the packages category tab")
 	public void user_click_on_the_packages_category_tab() throws InterruptedException {
@@ -21,10 +26,13 @@ public class PackagesTest extends CommonMethods {
 		Assert.assertTrue(driver.getCurrentUrl().contains(PKPage));
 	}
 
-	@Then("User click and select the city of destination to {string}")
-	public void user_click_and_select_the_city_of_destination_to(String destination) throws InterruptedException {
-		homePage.setLocation(destination);
+	@Then("User click and select the city of {string} and {string}")
+	public void user_click_and_select_the_city_of_and(String Departure1, String Destination1) throws InterruptedException {
+		homePage.setLocation(homePage.fromField, Departure1);
+		homePage.setLocation(homePage.toField, Destination1);
 	}
+
+
 	@Then("User select the departure {string} and arrival {string}")
 	public void user_select_the_departure_and_arrival(String startDate,String endDate) throws InterruptedException {
 		homePage.startDateField.click();
@@ -42,7 +50,7 @@ public class PackagesTest extends CommonMethods {
 	@Then("User should be able to see {string} out of all recommended hotels on the page")
 	public void user_should_be_able_to_see_out_of_all_recommended_hotels_on_the_page(String hotelAmountOnPage) throws InterruptedException {
 		switchToChildWindow();
-		Thread.sleep(5000);
+		wait(5);
 		Assert.assertEquals(packagesPage.hotelsOnPageList.size(), Integer.parseInt(hotelAmountOnPage));
 	}
 
@@ -65,10 +73,15 @@ public class PackagesTest extends CommonMethods {
 	@Then("User should be able to see only one hotel with a price matching the selected price")
 	public void user_should_be_able_to_see_only_one_hotel_with_a_price_matching_the_selected_price() throws InterruptedException {
 		for (int i = 0; i < packagesPage.hotelPriceResult.size(); i++) {
-			Thread.sleep(1000);
+			wait(1);
 			Assert.assertTrue(getPrice(packagesPage.hotelPriceResult.get(i)) <= getPrice(packagesPage.minPrice));
 			System.out.println("result price is in range");
 		}
 	}
+	
+//	@Then("User can close the browser")
+//	public void user_can_close_the_broswer() {
+//	    tearDown();
+//	}
 
 }
