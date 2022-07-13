@@ -17,7 +17,6 @@ import io.cucumber.junit.CucumberOptions;
 		tags = "@tola2"
 		)
 
-
 public class SmokeRunner {
 
 	

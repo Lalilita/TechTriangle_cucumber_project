@@ -58,11 +58,13 @@ public class StaysPage extends CommonMethods{
 	@FindBy (xpath = "/html/body/div[13]/div/div[2]/div/div[1]/div[2]/div[1]/div[2]/div")
 	public List <WebElement> allDates;
 
-	@FindBy (xpath = "//div[@aria-label='Click to reset filters']")
+//	@FindBy (xpath = "//div[@aria-label='Click to reset filters']")
+	@FindBy (xpath = "/html/body/div[1]/div[1]/main/div[2]/div[2]/div[5]/div/div[2]/div[3]/div[2]/div[5]/div/div/div[1]")
 	public WebElement searchResult;
 
 	@FindBy (xpath = "//div[@class='fArK']//div//div[@aria-label='5']//div[@class='HNDy-label']")
 //	@FindBy (xpath = "//*[text()='5']")
+//	@FindBy (xpath = "/html/body/div[1]/div[1]/main/div[2]/div[2]/div[5]/div/div[1]/div/div/div[1]/div/div/div/div/div/div[4]/div[2]/div[5]/div/div[1]")
 	public WebElement hotelClass_FiveStars;
 
 	@FindBy (xpath = "//div[@class='fArK']//div//div[@aria-label='8+']//div[@class='HNDy-label']")
@@ -147,7 +149,8 @@ public class StaysPage extends CommonMethods{
 	@FindBy(xpath = "/html/body/div[1]/div[1]/main/div[1]/div[1]/div/div[2]/div[1]/div[14]/div/section/div/div/div/div[2]/div/a/div[2]")
 	public List<WebElement> cityNames;
 
-	@FindBy (xpath = "(//div[@class='KzeV-title'])[8]")
+//	@FindBy (xpath = "(//div[@class='KzeV-title'])[8]")
+	@FindBy (xpath = "/html/body/div[1]/div[1]/main/div[1]/div[1]/div/div[2]/div[1]/div[14]/div/section/div/header/div/div/div[1]")
 	public WebElement popularCities;
 
 	@FindBy (xpath = "/html/body/div[1]/div[1]/main/div[1]/div[1]/div/div[2]/div[1]/div[14]/div/section/div/div/div/div[3]")
@@ -156,7 +159,6 @@ public class StaysPage extends CommonMethods{
 	@FindBy (xpath = "/html/body/div[1]/div[1]/main/div[1]/div[1]/div/div[2]/div[1]/div[14]/div/section/div/div/div/div[1]")
 	public WebElement backArrow;
 		
-
 
 	public void clickStays() {
 		click(staysButton);	

@@ -28,7 +28,6 @@ public void user_on_the_stays_page() {
 
 @When("user fill in searching criteria")
 public void user_fill_in_searching_criteria() {
-	
 	staysPage.searchField();
 }
 

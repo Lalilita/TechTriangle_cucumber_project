@@ -1,5 +1,5 @@
 
-@tola2
+#@tola2
 Feature: Stays page Searching automation testing
 
 Background: 
