@@ -45,6 +45,9 @@ public class FlightTrackerByAirport extends CommonMethods {
 		Assert.assertTrue(flightPage.flightHeader.isDisplayed());
 		Assert.assertTrue(flightPage.flightMap.isDisplayed());
 	}
-
+//	@Then("User can close the browser")
+//	public void user_can_close_the_broswer() {
+//	    tearDown();
+//	}
 
 }

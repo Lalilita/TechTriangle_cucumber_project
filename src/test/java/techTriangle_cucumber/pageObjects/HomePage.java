@@ -40,12 +40,12 @@ public class HomePage extends CommonMethods {
 	@FindBy(xpath = "//button[@aria-label='Search']")
 	public WebElement searchBtn;
 
-	@FindBy(xpath = "//div[@class='wHSr-monthName']")
+	@FindBy(xpath = "(//div[@class='wHSr-monthName'])[1]")
 	public WebElement navBar;
 
 	@FindBy(xpath = "//button[@aria-label='Next Month']")
 	public WebElement nextBtn;
-	
+
 	// ratthanon
 	@FindBy(xpath = "//div[text()='Things to do']")
 	public WebElement thinkTodoTab;
@@ -70,20 +70,20 @@ public class HomePage extends CommonMethods {
 
 	@FindBy(xpath = "//div[text()='Travel Restrictions']")
 	public WebElement TravelRestrictionLink;
-	
+
 	@FindBy(xpath = "//a[@aria-label='Search for cars']")
 	public WebElement carBtn;
 
+	// ------------ Method ------------------//
+	// Lalita
 
-	
-	//------------ Method ------------------//
-	//Lalita
-	
-	public  void setLocation(String location) throws InterruptedException {
-	sendText(toField, location);
-	Thread.sleep(1000);
-	toField.sendKeys(Keys.ARROW_DOWN);
-	toField.sendKeys(Keys.TAB);
+	public void setLocation(WebElement ele, String location) throws InterruptedException {
+		ele.click();
+		ele.sendKeys(location);
+		wait(1);
+		ele.sendKeys(Keys.ARROW_DOWN);
+		ele.sendKeys(Keys.TAB);
+
 	}
-	
+
 }
