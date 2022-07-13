@@ -12,11 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 				"html:target/smokeTests-cucumber-reports.html" }, 
 		features = "src/test/resources/featureFiles", 
 		glue = "techTriangle_cucumber/stepDefinitions",
-		dryRun = false,    
-		monochrome = true
-		//tags = "@Regression"
-		
-		
+		dryRun = false,    		
 		)
 		
 		
