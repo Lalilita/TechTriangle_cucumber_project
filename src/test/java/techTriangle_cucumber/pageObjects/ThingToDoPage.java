@@ -88,8 +88,16 @@ public class ThingToDoPage extends CommonMethods {
     @FindBy(xpath = "//h6[text()='Company']")
     public WebElement FooterCompany;
     
-  //h6[text()='Company']
+    @FindBy(xpath = "//div[contains(@class,'results-list')]/ul/li[1]/div/div/div/div[2]/div[1]/div[1]")
+    public WebElement firstTourLink;
     
+    @FindBy(xpath = "//h1[contains(@class,'title')]")
+    public WebElement headerTourLink;
+    
+    @FindBy(xpath = "//div[contains(@class,'filtered')]")
+    public WebElement attractionFilterNumber;
+    
+    //div[contains(@class,'filtered')] 
             
     
     public int getNumberResult() {    	

@@ -1,6 +1,7 @@
 package techTriangle_cucumber.runners;
 
 import org.junit.runner.RunWith;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
@@ -12,8 +13,8 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src/test/resources/featureFiles", 
 		glue = "techTriangle_cucumber/stepDefinitions",
 		dryRun = false,    
-		monochrome = true,
-		tags = "@lalita"
+		monochrome = true
+		//tags = "@Regression"
 		
 		
 		)
