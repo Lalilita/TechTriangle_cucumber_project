@@ -1,4 +1,4 @@
-
+@Regression
 Feature: Travel Restrictions by country
 
 
